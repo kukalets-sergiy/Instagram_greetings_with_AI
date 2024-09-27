@@ -65,12 +65,15 @@ driver = BaseSeleniumDriver(
 )
 user_names = []
 
-with open('instagram_accounts.txt', 'r') as f:
-    for line in f:
-        line = line.strip()
-        if line:
-            user_names.append(line)
-
+try:
+    with open('instagram_accounts.txt', 'r') as f:
+        for line in f:
+            line = line.strip()
+            if line:
+                user_names.append(line)
+except FileNotFoundError:
+    with open('instagram_accounts.txt', 'w') as f:
+        pass
 
 driver.create_instance()
 driver.set_page_load_timeout(120)
