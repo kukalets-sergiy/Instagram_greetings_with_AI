@@ -32,10 +32,17 @@ Activate the virtual environment:
 
 #### 3. Install dependencies:
 Install the required Python libraries using `requirements.txt`:
+or for Windows:
+Install the required Python libraries using `requirements_for_windows.txt`:
 
 ```bash
 pip install -r requirements.txt
 ```
+or for Windows:
+```bash
+pip install -r requirements_for_windows.txt
+```
+
 
 #### 4. Set up environment variables:
 Create a `.env` file in the project root directory. You need to provide:
