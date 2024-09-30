@@ -2,6 +2,14 @@ from openai import OpenAI
 import os
 from dotenv import load_dotenv
 
+"""
+This function takes an AI description of an image and sends it to the OpenAI API to generate a greeting message.
+
+The message is then returned to the caller.
+
+The function will print the response from the OpenAI API to the console for debugging purposes.
+"""
+
 load_dotenv()
 ai_key = os.getenv('OPENAI_KEY')
 client = OpenAI(api_key=ai_key)

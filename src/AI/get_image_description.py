@@ -2,6 +2,11 @@ from openai import OpenAI
 import os
 from dotenv import load_dotenv
 
+"""
+This function takes an image source URL and asks the GPT-4O-MINI model to describe what is in the image.
+It returns the description as a string.
+"""
+
 load_dotenv()
 ai_key = os.getenv('OPENAI_KEY')
 client = OpenAI(api_key=ai_key)

@@ -2,6 +2,15 @@ import os
 import sys
 from enum import Enum
 
+"""
+This class contains all global variables and paths used in the application.
+
+Methods:
+    get_resource(relative_path: str) -> str: returns absolute path to the resource
+    get_bot_log_path(bot) -> str: returns absolute path to the bot log file
+    get_bot_statistic_path(bot) -> str: returns absolute path to the bot statistic file
+"""
+
 class GLOBAL:
     class PATH:
         APPLICATION_ROOT = f'{os.path.expanduser('~/Instagram_greetings_with_AI')}'

@@ -1,9 +1,3 @@
-"""
-This script opens instagram, logs in using a proxy, and then iterates through a list of usernames.
-For each username, it opens their profile, waits for the page to load, gets the image source of their profile picture,
-gets a description of the image using an AI model, and then sends a message to the user using the AI-generated description.
-"""
-
 import json
 import sys
 import os
@@ -25,9 +19,19 @@ from src.utils.bot.bot_humanity import random_sleep
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from dotenv import load_dotenv
 
+"""
+This script opens instagram, logs in using a proxy, and then iterates through a list of usernames.
+For each username, it opens their profile, waits for the page to load, gets the image source of their profile picture,
+gets a description of the image using an AI model, and then sends a message to the user using the AI-generated
+description.
+
+The script will print the response from the OpenAI API to the console for debugging purposes.
+
+The script will also save the cookies to the database for future logins, so you won't need to log in again.
+"""
+
 load_dotenv()
 current_proxy = os.getenv('current_proxy')
-
 
 
 BASE_URL = 'https://instagram.com/'

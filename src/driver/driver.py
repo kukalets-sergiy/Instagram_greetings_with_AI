@@ -14,9 +14,29 @@ from src.proxy.connector import ProxyConnectorExtension
 from src.utils.bot.scrollers import VerticalScroller
 from src.utils.selenium import driver_processes
 
-
 from src.exceptions.driver import TryAgainPageError, BrowserClosedError
 
+"""
+This module contains the BaseSeleniumDriver class, which is an extension of the Chrome class from the
+undetected-chromedriver package.
+
+This class is designed to be used with the Chrome web browser and provides additional functionality beyond what is
+available in the undetected-chromedriver package.
+
+The main purpose of this class is to provide a way to interact with the Chrome browser in a way that is not detectable
+by web services that try to detect and block automation scripts.
+
+The class provides methods for navigating to a URL, clicking on an element, submitting a form, and getting the page
+source.
+
+The class also provides methods for waiting for certain conditions to be met, such as waiting for an element to be
+visible or waiting for a page to finish loading.
+
+The class also provides methods for handling common issues that arise when interacting with web pages, such as
+handling pop-up windows and handling pages that try to detect and block automation scripts.
+
+The class is designed to be easy to use and provides a simple and intuitive API for interacting with the Chrome browser.
+"""
 
 class BaseSeleniumDriver(uc.Chrome):
     """

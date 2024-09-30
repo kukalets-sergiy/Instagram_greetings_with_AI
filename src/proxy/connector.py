@@ -6,6 +6,42 @@ import random
 import logging
 from . import Proxy
 
+"""
+ProxyConnectorExtension is a class that generates a temporary folder with a
+Chrome extension that can be used to connect to a proxy server.
+
+The class takes a :class:`Proxy` object as parameter and generates a temporary
+folder with the following structure:
+
+.. code-block:: bash
+
+    extension_dir/
+        manifest.json
+        background.js
+
+The manifest.json file contains the basic information about the extension,
+while the background.js file contains the code that will be executed in the
+background to set the proxy configuration.
+
+The class provides the following methods:
+
+- :meth:`get_extension_dir`: returns the path of the temporary folder
+- :meth:`remove_extension_dir`: removes the temporary folder
+- :meth:`__del__`: removes the temporary folder when the instance is deleted
+
+The class is designed to be used as a context manager, so you can use it in a
+with statement to ensure that the temporary folder is removed when you are
+done with it.
+
+Example:
+
+.. code-block:: python
+
+    with ProxyConnectorExtension(proxy) as ext_dir:
+        # Do something with the extension
+        pass
+"""
+
 logger = logging.getLogger(__name__)
 
 
